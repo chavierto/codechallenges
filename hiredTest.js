@@ -3,7 +3,7 @@
 // return the number of primes included in the first n fibonacci numbers
 
 // come up with fibo seq n long
-function result(n){
+function result(n) {
 	function fibo(n) {
 		if (n <= 0) {
 			return [];
@@ -21,7 +21,23 @@ function result(n){
 
 	let set = fibo(n);
 	console.log(set);
-	// create function that tests each element in set is prime or not
+	let primes = [];
+	// create function that tests each element in set is prime or not. If prime, push to new array, return array.
+	function isPrime(number) {
+		if (number <= 2) {
+			return false;
+		} else if (number > 2) {
+			for (let i = 2; i < number; i++) {
+				if (number % i === 0) {
+					return false;
+				}
+			}
+			primes.push(number);
+		}
+	}
+
+	set.forEach(isPrime);
+	console.log(primes);
 }
 
-result(19)
+result(10);
