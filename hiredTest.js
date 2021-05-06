@@ -7,7 +7,7 @@ function result(n) {
 	function fibo(n) {
 		if (n <= 0) {
 			return [];
-		} else if (n == 1) {
+		} else if (n === 1) {
 			return [0];
 		} else {
 			let result = [0, 1];
